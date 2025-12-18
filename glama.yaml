@@ -1,0 +1,35 @@
+name: bet-mcp
+schemaVersion: 1
+build:
+  command: npm install && npm run build
+start:
+  command: node dist/index.js
+  transport: stdio
+env:
+  - key: APIFOOTBALL_KEY
+    required: true
+    description: API-Football key
+  - key: ODDS_API_KEY
+    required: true
+    description: The Odds API key
+  - key: APIFOOTBALL_LEAGUE_ID
+    default: "135"
+    description: Serie A league id
+  - key: APIFOOTBALL_SEASON
+    default: "2024"
+    description: Season year
+  - key: ODDS_API_REGION
+    default: "eu"
+    description: The Odds API regions filter
+  - key: ODDS_API_MARKETS
+    default: "h2h,totals,btts"
+    description: The Odds API markets query
+  - key: ODDS_API_SPORT
+    default: "soccer_italy_serie_a"
+    description: Odds API sport key
+  - key: HOME_ADVANTAGE_FACTOR
+    default: "1.08"
+    description: Lambda multiplier for home team
+  - key: CACHE_TTL_SECONDS
+    default: "120"
+    description: Cache TTL for upstream requests

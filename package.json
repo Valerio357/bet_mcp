@@ -1,0 +1,24 @@
+{
+  "name": "bet-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that surfaces Serie A fixtures, odds, and value picks",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.7",
+    "fastmcp": "^3.25.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
