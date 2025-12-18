@@ -2,11 +2,11 @@
 
 MCP server (FastMCP + TypeScript) that focuses on Serie A pre-match analysis:
 
-- `fixtures.list` – next fixtures in a configurable window
-- `match.snapshot` – last 5 results, standings, GF/GA averages
-- `odds.prematch` – normalized odds for 1X2 / OU 2.5 / BTTS across bookmakers
-- `fair.compute` – Poisson-lite probabilities + fair odds
-- `value.detect` – top value picks by comparing best odds vs fair model
+- `fixtures_list` – next fixtures in a configurable window
+- `match_snapshot` – last 5 results, standings, GF/GA averages
+- `odds_prematch` – normalized odds for 1X2 / OU 2.5 / BTTS across bookmakers
+- `fair_compute` – Poisson-lite probabilities + fair odds
+- `value_detect` – top value picks by comparing best odds vs fair model
 
 ## Getting started
 

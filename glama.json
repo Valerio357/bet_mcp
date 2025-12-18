@@ -33,10 +33,10 @@
     { "key": "CACHE_TTL_SECONDS", "default": "120", "description": "Cache TTL for upstream calls" }
   ],
   "tools": [
-    "fixtures.list",
-    "match.snapshot",
-    "odds.prematch",
-    "fair.compute",
-    "value.detect"
+    "fixtures_list",
+    "match_snapshot",
+    "odds_prematch",
+    "fair_compute",
+    "value_detect"
   ]
 }

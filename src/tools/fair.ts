@@ -5,7 +5,7 @@ import { computeFairOddsFromSnapshot } from "../services/fairOddsEngine.js";
 
 export const registerFairTool = (server: FastMCP) => {
   server.addTool({
-    name: "fair.compute",
+    name: "fair_compute",
     description: "Calcola probabilità e quote fair (Poisson semplice) per 1X2 / OU 2.5 / BTTS.",
       parameters: z.object({
         match_id: z.number().describe("Fixture id da OpenLigaDB"),

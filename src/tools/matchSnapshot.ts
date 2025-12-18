@@ -4,7 +4,7 @@ import { buildMatchSnapshot } from "../services/matchSnapshot.js";
 
 export const registerMatchSnapshotTool = (server: FastMCP) => {
   server.addTool({
-    name: "match.snapshot",
+    name: "match_snapshot",
       description: "Restituisce forma, classifica, gol fatti/subiti e ultimi risultati per il match richiesto.",
       parameters: z.object({
         match_id: z.number().int().describe("match_id fornito da OpenLigaDB"),

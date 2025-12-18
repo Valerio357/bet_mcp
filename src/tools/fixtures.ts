@@ -4,7 +4,7 @@ import { openLiga } from "../services/context.js";
 
 export const registerFixturesTool = (server: FastMCP) => {
   server.addTool({
-    name: "fixtures.list",
+    name: "fixtures_list",
       description: "Ritorna i prossimi match (OpenLigaDB) entro X giorni (id, squadre, kickoff, venue).",
     parameters: z.object({
       days: z.number().int().min(1).max(10).default(3).describe("Numero di giorni in avanti da scandire"),
