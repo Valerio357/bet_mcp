@@ -1,0 +1,37 @@
+{
+  "name": "bet-mcp",
+  "version": "0.1.0",
+  "description": "Serie A pre-match betting MCP server (fixtures, odds, fair odds, value picks).",
+  "homepage": "https://glama.ai/mcp",
+  "repository": "https://github.com/valerio/bet-mcp",
+  "tags": [
+    "football",
+    "serie-a",
+    "sports",
+    "betting",
+    "odds"
+  ],
+  "entry": {
+    "transport": "stdio",
+    "command": "node dist/index.js",
+    "build": "npm install && npm run build"
+  },
+  "env": [
+    { "key": "APIFOOTBALL_KEY", "required": true, "description": "API-Football key" },
+    { "key": "ODDS_API_KEY", "required": true, "description": "The Odds API key" },
+    { "key": "APIFOOTBALL_LEAGUE_ID", "default": "135", "description": "Serie A league id" },
+    { "key": "APIFOOTBALL_SEASON", "default": "2024", "description": "Season year" },
+    { "key": "ODDS_API_REGION", "default": "eu", "description": "Odds API region filter" },
+    { "key": "ODDS_API_MARKETS", "default": "h2h,totals,btts", "description": "Odds API market request" },
+    { "key": "ODDS_API_SPORT", "default": "soccer_italy_serie_a", "description": "Odds API sport key" },
+    { "key": "HOME_ADVANTAGE_FACTOR", "default": "1.08", "description": "Home λ multiplier" },
+    { "key": "CACHE_TTL_SECONDS", "default": "120", "description": "Cache TTL for upstream calls" }
+  ],
+  "tools": [
+    "fixtures.list",
+    "match.snapshot",
+    "odds.prematch",
+    "fair.compute",
+    "value.detect"
+  ]
+}
