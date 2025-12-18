@@ -11,10 +11,11 @@ const requireEnv = (key: string): string => {
 };
 
 export const config = {
-  openLiga: {
-    baseUrl: process.env.OPENLIGADB_BASE_URL ?? "https://api.openligadb.de",
-    leagueShortcut: process.env.OPENLIGADB_LEAGUE_SHORTCUT ?? "seria",
-    season: process.env.OPENLIGADB_SEASON ?? String(new Date().getFullYear()),
+  footballData: {
+    token: requireEnv("FOOTBALL_DATA_TOKEN"),
+    baseUrl: process.env.FOOTBALL_DATA_BASE_URL ?? "https://api.football-data.org/v4",
+    competition: process.env.FOOTBALL_DATA_COMPETITION ?? "SA",
+    season: process.env.FOOTBALL_DATA_SEASON ?? String(new Date().getFullYear()),
   },
   oddsApi: {
     key: requireEnv("ODDS_API_KEY"),

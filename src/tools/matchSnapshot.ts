@@ -7,7 +7,7 @@ export const registerMatchSnapshotTool = (server: FastMCP) => {
     name: "match_snapshot",
       description: "Restituisce forma, classifica, gol fatti/subiti e ultimi risultati per il match richiesto.",
       parameters: z.object({
-        match_id: z.number().int().describe("match_id fornito da OpenLigaDB"),
+        match_id: z.number().int().describe("match_id fornito da Football-Data.org"),
       }),
     execute: async (args) => {
       const snapshot = await buildMatchSnapshot(args.match_id);

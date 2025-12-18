@@ -1,5 +1,5 @@
-import { OpenLigaDBClient } from "../clients/openLigaDB.js";
+import { FootballDataClient } from "../clients/footballData.js";
 import { OddsApiClient } from "../clients/oddsApi.js";
 
-export const openLiga = new OpenLigaDBClient();
+export const footballData = new FootballDataClient();
 export const oddsApi = new OddsApiClient();

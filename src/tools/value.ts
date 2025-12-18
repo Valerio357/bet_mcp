@@ -7,7 +7,7 @@ export const registerValueTool = (server: FastMCP) => {
     name: "value_detect",
     description: "Confronta quote mercato vs fair per trovare fino a 3 value pick (edge >= 5%).",
       parameters: z.object({
-        match_id: z.number().describe("Fixture id (OpenLigaDB)"),
+        match_id: z.number().describe("Fixture id (Football-Data.org)"),
       }),
     execute: async (args) => {
       const payload = await detectValue(args.match_id);

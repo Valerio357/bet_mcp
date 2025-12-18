@@ -20,7 +20,7 @@ MCP server (FastMCP + TypeScript) that focuses on Serie A pre-match analysis:
 
    ```bash
    cp .env.example .env
-   # edit the file with OPENLIGADB_* (optional) and ODDS_API_KEY
+   # edit the file with FOOTBALL_DATA_TOKEN and ODDS_API_KEY
    ```
 
 3. Run locally:
@@ -42,12 +42,12 @@ MCP server (FastMCP + TypeScript) that focuses on Serie A pre-match analysis:
 
 5. Deploy on [glama.ai](https://glama.ai):
 
-Glama uses the included `glama.yaml`/`glama.json` files to run `npm install && npm run build`, then starts the server with `MCP_TRANSPORT=http` on port `8080`. Configure `ODDS_API_KEY` (required) and, if needed, override the default OpenLigaDB league/season values in the Glama dashboard so inspections and tool detection can succeed.
+Glama uses the included `glama.yaml`/`glama.json` files to run `npm install && npm run build`, then starts the server with `MCP_TRANSPORT=http` on port `8080`. Configure `FOOTBALL_DATA_TOKEN` and `ODDS_API_KEY` (others optional) in the Glama dashboard so inspections and tool detection can succeed.
 
 ## Implementation notes
 
 - **Stack** – FastMCP + Axios + Zod, TypeScript strict mode.
-- **API clients** – OpenLigaDB for fixtures/stats; The Odds API for consolidated odds.
+- **API clients** – Football-Data.org for fixtures/stats; The Odds API for consolidated odds.
 - **Modeling** – Poisson using GF/GA averages + configurable home advantage, derived OU/BTTS probs.
 - **Caching** – In-memory TTL cache to reduce API calls (configurable via `CACHE_TTL_SECONDS`).
 - **Value picks** – Filters by `edge >= 5%` and `odds >= 1.50`, returns rationale referencing λ/form.
@@ -56,9 +56,9 @@ Glama uses the included `glama.yaml`/`glama.json` files to run `npm install && n
 
 | key | description |
 | --- | --- |
-| `OPENLIGADB_BASE_URL` | Defaults to `https://api.openligadb.de` |
-| `OPENLIGADB_LEAGUE_SHORTCUT` | Defaults to `seria` |
-| `OPENLIGADB_SEASON` | Defaults to current year |
+| `FOOTBALL_DATA_TOKEN` | Football-Data.org API token |
+| `FOOTBALL_DATA_COMPETITION` | Defaults to `SA` |
+| `FOOTBALL_DATA_SEASON` | Defaults to current year |
 | `ODDS_API_KEY` | The Odds API key |
 | `ODDS_API_REGION` | Regions filter (default `eu`) |
 | `ODDS_API_MARKETS` | Markets request list (default `h2h,totals,btts`) |

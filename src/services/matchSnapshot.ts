@@ -1,21 +1,21 @@
-import { openLiga } from "./context.js";
+import { footballData } from "./context.js";
 import { MatchSnapshot, TeamSnapshot } from "../types.js";
 
 export const buildMatchSnapshot = async (matchId: number): Promise<MatchSnapshot> => {
-  const fixture = await openLiga.getFixture(matchId);
+  const fixture = await footballData.getFixture(matchId);
   if (!fixture) {
-    throw new Error(`Fixture ${matchId} not found on OpenLigaDB`);
+    throw new Error(`Fixture ${matchId} not found on Football-Data.org`);
   }
 
-  const standings = await openLiga.getStandingsMap();
+  const standings = await footballData.getStandingsMap();
   const [homeStats, awayStats] = await Promise.all([
-    openLiga.getTeamStatistics(fixture.homeTeam.id),
-    openLiga.getTeamStatistics(fixture.awayTeam.id),
+    footballData.getTeamStatistics(fixture.homeTeam.id),
+    footballData.getTeamStatistics(fixture.awayTeam.id),
   ]);
 
   const [homeResults, awayResults] = await Promise.all([
-    openLiga.getRecentMatches(fixture.homeTeam.id),
-    openLiga.getRecentMatches(fixture.awayTeam.id),
+    footballData.getRecentMatches(fixture.homeTeam.id),
+    footballData.getRecentMatches(fixture.awayTeam.id),
   ]);
 
   const homeSnapshot = enrichTeamSnapshot(fixture.homeTeam.id, standings, homeStats, homeResults);
