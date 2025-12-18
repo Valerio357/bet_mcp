@@ -7,18 +7,18 @@ start:
   transport: http
   port: 8080
 env:
-  - key: APIFOOTBALL_KEY
-    required: true
-    description: API-Football key
   - key: ODDS_API_KEY
     required: true
     description: The Odds API key
-  - key: APIFOOTBALL_LEAGUE_ID
-    default: "135"
-    description: Serie A league id
-  - key: APIFOOTBALL_SEASON
+  - key: OPENLIGADB_BASE_URL
+    default: "https://api.openligadb.de"
+    description: OpenLigaDB base URL
+  - key: OPENLIGADB_LEAGUE_SHORTCUT
+    default: "seria"
+    description: OpenLigaDB league shortcut
+  - key: OPENLIGADB_SEASON
     default: "2024"
-    description: Season year
+    description: League season
   - key: ODDS_API_REGION
     default: "eu"
     description: The Odds API regions filter
