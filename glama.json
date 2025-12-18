@@ -1,9 +1,13 @@
 {
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
   "name": "bet-mcp",
   "version": "0.1.0",
   "description": "Serie A pre-match betting MCP server (fixtures, odds, fair odds, value picks).",
   "homepage": "https://glama.ai/mcp",
   "repository": "https://github.com/valerio/bet-mcp",
+  "maintainers": [
+    "valerio"
+  ],
   "tags": [
     "football",
     "serie-a",
