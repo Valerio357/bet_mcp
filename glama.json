@@ -12,7 +12,8 @@
     "odds"
   ],
   "entry": {
-    "transport": "stdio",
+    "transport": "http",
+    "port": 8080,
     "command": "node dist/index.js",
     "build": "npm install && npm run build"
   },

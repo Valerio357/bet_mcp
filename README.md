@@ -42,7 +42,7 @@ MCP server (FastMCP + TypeScript) that focuses on Serie A pre-match analysis:
 
 5. Deploy on [glama.ai](https://glama.ai):
 
-   Glama can auto-build the server using the included `glama.yaml`. It runs `npm install && npm run build` and launches `node dist/index.js` over stdio. Make sure required env vars (`APIFOOTBALL_KEY`, `ODDS_API_KEY`) are set in the Glama dashboard.
+   Glama uses the included `glama.yaml`/`glama.json` files to run `npm install && npm run build`, then starts the server with `MCP_TRANSPORT=http` on port `8080`. Configure `APIFOOTBALL_KEY` and `ODDS_API_KEY` (others optional) in the Glama dashboard so inspections and tool detection can succeed.
 
 ## Implementation notes
 
