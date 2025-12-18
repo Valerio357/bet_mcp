@@ -142,8 +142,16 @@ export class OpenLigaDBClient {
         const homeScore = score?.home ?? 0;
         const awayScore = score?.away ?? 0;
         const isHome = match.Team1.TeamId === teamId;
-        const result =
-          homeScore === awayScore ? "DRAW" : isHome ? (homeScore > awayScore ? "WIN" : "LOSS") : awayScore > homeScore ? "WIN" : "LOSS";
+        const result: RecentMatchSummary["result"] =
+          homeScore === awayScore
+            ? "DRAW"
+            : isHome
+              ? homeScore > awayScore
+                ? "WIN"
+                : "LOSS"
+              : awayScore > homeScore
+                ? "WIN"
+                : "LOSS";
         return {
           id: match.MatchID,
           dateUtc: (match.MatchDateTimeUTC ?? new Date(match.MatchDateTime).toISOString()),
